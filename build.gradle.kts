@@ -1,5 +1,4 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 val compileKotlin: KotlinCompile by tasks
 compileKotlin.kotlinOptions.jvmTarget = "1.8"
 val compileTestKotlin: KotlinCompile by tasks
@@ -9,7 +8,7 @@ plugins {
     id("kotlin")
 }
 dependencies {
-    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))    
 
     implementation(kotlin("gradle-plugin", Versions.kotlin))
 }
@@ -30,7 +29,7 @@ repositories {
     jcenter()
 }
 dependencies {
-    implementation("com.github.shyiko.ktlint:ktlint-core:${Versions.ktlint}")
+    implementation("com.github.shyiko.ktlint:ktlint-core:${Versions.ktlint}")    
 
     testImplementation("com.github.shyiko.ktlint:ktlint-core:${Versions.ktlint}")
     testImplementation("com.github.shyiko.ktlint:ktlint-test:${Versions.ktlint}")
