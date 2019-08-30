@@ -11,6 +11,7 @@ class Sorter() {
     val methodsOrder = listOf(
         /* Presenter */
         "onSetArguments",
+        "onFirstViewAttach",
         "onBindView",
         "onUnbindView",
         /* Fragment */
@@ -32,10 +33,15 @@ class Sorter() {
         "onAttachedToWindow",
         "onSizeChanged",
         "onMeasure",
+        "onLayout",
         "onDraw",
         "dispatchTouchEvent",
         "onInterceptTouchEvent",
         "onTouchEvent",
+        "dispatchSaveInstanceState",
+        "dispatchRestoreInstanceState",
+        "onSaveInstanceState",
+        "onRestoreInstanceState",
         "callOnClick",
         "setEnabled"
     )

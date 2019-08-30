@@ -12,10 +12,6 @@ class SortRule : Rule("kotlin-sort") {
 
     override fun visit(node: ASTNode, autoCorrect: Boolean, emit: (offset: Int, errorMessage: String, canBeAutoCorrected: Boolean) -> Unit) {
 
-        if (node.elementType == KtStubElementTypes.CLASS) {
-            println(classes++)
-        }
-
         if (node.elementType == KtStubElementTypes.CLASS_BODY) {
             val children = node.getChildren(null)
             val innerElements = children.filter { sorter.sortList.contains(it.elementType) }
