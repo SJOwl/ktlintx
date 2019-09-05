@@ -13,6 +13,8 @@ class Sorter() {
         "onSetArguments",
         "onFirstViewAttach",
         "onBindView",
+        "attachView",
+        "detachView",
         "onUnbindView",
         /* Fragment */
         "onActivityCreated",
