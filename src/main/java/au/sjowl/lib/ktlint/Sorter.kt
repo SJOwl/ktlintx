@@ -124,6 +124,7 @@ class Sorter {
         println("type = ${node.elementType}, text = \'${node.text}\'")
     }
 
+    @Suppress("unused")
     private fun printNode(node: ASTNode) {
         if (node is CompositeElement) {
             node.children().forEach {

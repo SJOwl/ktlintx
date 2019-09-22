@@ -43,10 +43,6 @@ class SortRule : Rule("kotlin-sort") {
             }
         }
     }
-
-    companion object {
-        var classes = 0
-    }
 }
 
 /*
