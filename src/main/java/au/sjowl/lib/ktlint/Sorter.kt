@@ -7,8 +7,8 @@ import org.jetbrains.kotlin.lexer.KtTokens
 import org.jetbrains.kotlin.psi.psiUtil.children
 import org.jetbrains.kotlin.psi.stubs.elements.KtStubElementTypes
 
-class Sorter() {
-    val methodsOrder = listOf(
+class Sorter {
+    private val methodsOrder = listOf(
         /* Presenter */
         "onSetArguments",
         "onFirstViewAttach",
@@ -79,7 +79,7 @@ class Sorter() {
         }.forEach { node.removeChild(it) }
     }
 
-    fun String.containsOneOf(items: List<String>): Boolean {
+    private fun String.containsOneOf(items: List<String>): Boolean {
         items.forEach { if (this == it) return true }
         return false
     }
@@ -120,11 +120,11 @@ class Sorter() {
         parent.addChild(PsiWhiteSpaceImpl("\n"), node)
     }
 
-    fun printSimple(node: ASTNode) {
+    private fun printSimple(node: ASTNode) {
         println("type = ${node.elementType}, text = \'${node.text}\'")
     }
 
-    fun printNode(node: ASTNode) {
+    private fun printNode(node: ASTNode) {
         if (node is CompositeElement) {
             node.children().forEach {
                 printNode(it)
