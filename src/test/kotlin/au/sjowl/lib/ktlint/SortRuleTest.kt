@@ -1,6 +1,6 @@
 package au.sjowl.lib.ktlint
 
-import com.github.shyiko.ktlint.test.format
+import com.pinterest.ktlint.test.format
 import org.junit.Test
 
 val inputCode = """

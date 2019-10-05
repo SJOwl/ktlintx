@@ -30,10 +30,10 @@ repositories {
     jcenter()
 }
 dependencies {
-    implementation("com.github.shyiko.ktlint:ktlint-core:${Versions.ktlint}")
+    implementation("com.pinterest.ktlint:ktlint-core:${Versions.ktlint}")
 
-    testImplementation("com.github.shyiko.ktlint:ktlint-core:${Versions.ktlint}")
-    testImplementation("com.github.shyiko.ktlint:ktlint-test:${Versions.ktlint}")
+    testImplementation("com.pinterest.ktlint:ktlint-core:${Versions.ktlint}")
+    testImplementation("com.pinterest.ktlint:ktlint-test:${Versions.ktlint}")
     testImplementation("junit:junit:${Versions.Test.junit}")
     testImplementation("org.amshove.kluent:kluent:${Versions.Test.kluent}")
     testImplementation("org.assertj:assertj-core:${Versions.Test.assertj}")

@@ -10,7 +10,7 @@ buildscript {
     }
     dependencies {
         classpath("com.android.tools.build:gradle:3.4.1")
-        classpath("com.github.shyiko:ktlint:${Versions.ktlint}")
+        classpath("com.pinterest:ktlint:${Versions.ktlint}")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}")
     }
 }
@@ -23,7 +23,7 @@ val outputDir = "${project.buildDir}/reports/ktlint/"
 val inputFiles = project.fileTree(mapOf("dir" to "src", "include" to "**/*.kt"))
 
 dependencies {
-    ktlint("com.github.shyiko:ktlint:${Versions.ktlint}")
+    ktlint("com.pinterest:ktlint:${Versions.ktlint}")
 
     ktlint(project(":ktlintx"))
 }
@@ -32,7 +32,7 @@ val ktlintFormat by tasks.creating(JavaExec::class) {
     outputs.dir(outputDir)
     description = "Fix Kotlin code style deviations."
     classpath = ktlint
-    main = "com.github.shyiko.ktlint.Main"
+    main = "com.pinterest.ktlint.Main"
     args = listOf("-F", "src/**/*.kt")
 }
 tasks {
