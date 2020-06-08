@@ -1,6 +1,7 @@
 # Ktlint module for android projects
 ## Usage
-Main gradle.kts file
+1. Include this repo as module into your app
+2. Main gradle.kts file
 ``` kotlin
 buildscript {
     repositories {
@@ -10,7 +11,7 @@ buildscript {
     }
     dependencies {
         classpath("com.android.tools.build:gradle:3.4.1")
-        classpath("com.github.shyiko:ktlint:${Versions.ktlint}")
+        classpath("com.pinterest:ktlint:${Versions.ktlint}")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}")
     }
 }
@@ -35,6 +36,7 @@ val ktlintFormat by tasks.creating(JavaExec::class) {
     main = "com.github.shyiko.ktlint.Main"
     args = listOf("-F", "src/**/*.kt")
 }
+// task: format all changed files before build
 tasks {
     preBuild {
         dependsOn(ktlintFormat)
